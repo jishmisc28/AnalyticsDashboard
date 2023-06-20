@@ -3,7 +3,8 @@ import { BrowserRouter,Navigate, Route, Routes } from 'react-router-dom';
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { createTheme } from "@mui/material/styles";
 import { themeSettings } from "./theme";
-import Layout from './layout/Layout';
+// import Layout from './layout/Layout';
+import DashboardLayout from './components/DashboardLayout';
 import Login from './components/Login';
 import DBConnection from './components/DBConnection';
 import DBDiagram from './components/DBDiagram';
@@ -52,8 +53,8 @@ function App() {
         <BrowserRouter>
           <ThemeProvider theme={theme}>
             <CssBaseline />
+            <DashboardLayout>
             <Routes>
-              {/* <Route element={<Layout />}> */}
                 <Route path="/" element={<Navigate to="/login" replace />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/db-connection" element={<DBConnection />} />
@@ -62,8 +63,9 @@ function App() {
                 <Route path="/sql-generation" element={<SqlGeneration />} />
                 <Route path="/data-visualization" element={<DataVisualization />} />
                 <Route path="/account" element={<Account />} /> 
-              {/* </Route> */}
+                
             </Routes>
+            </DashboardLayout>
           </ThemeProvider>
         </BrowserRouter>
       </div>
