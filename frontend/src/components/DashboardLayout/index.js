@@ -5,6 +5,9 @@ import { Drawer, List, ListItem, ListItemText, makeStyles, IconButton } from '@m
 import MenuIcon from '@material-ui/icons/Menu';
 
 const useStyles = makeStyles({
+  content: {
+    marginLeft: '280px',
+  },
   drawerPaper: {
     width: '240px',
   },
@@ -45,7 +48,7 @@ const DashboardLayout = ({ children }) => {
           ))}
         </List>
       </Drawer>
-      <main className="flex-grow p-6">
+      <main className={classes.content}>
         <IconButton
           onClick={() => setIsNavOpen(!isNavOpen)}
           className="mb-4"
